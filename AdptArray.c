@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "AdptArray.h"
 
-#define init 1
+#define init 0
 
 struct AdptArray_ {
     int size; // the size of the arry
@@ -23,9 +23,9 @@ PAdptArray CreateAdptArray(COPY_FUNC copyFunc, DEL_FUNC delFunc, PRINT_FUNC prin
         free(adptArray);
         return NULL;
     }
-//    adptArray->size = 0; //start from 0
-    adptArray->size = init; //no need
-    adptArray->data[0] = NULL;
+//    adptArray->size = 1;
+    adptArray->size = init; //start from 0
+//    adptArray->data[0] = NULL;
     adptArray->copyFunc = copyFunc;
     adptArray->delFunc = delFunc;
     adptArray->printFunc = printFunc;
